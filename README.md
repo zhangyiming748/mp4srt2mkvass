@@ -1,0 +1,2 @@
+# mp4srt2mkvass
+处理mp4视频和srt字幕为vp9+ogg编码带有外挂ass字幕的mkv
