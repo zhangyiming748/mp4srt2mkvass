@@ -1,12 +1,19 @@
 package main
 
 import (
+	"log/slog"
+	"mp4srt2mkvass/constant"
 	"mp4srt2mkvass/merge"
+	"os"
 )
 
 func main() {
-	folderPath := "/data" // 指定文件夹路径
-	extension := ".mp4"   // 指定扩展名
+	if r := os.Getenv("root"); r == "" {
+		slog.Info("没有设置root变量,使用默认")
+	} else {
+		constant.SetRoot(r)
+	}
+	extension := ".mp4" // 指定扩展名
 
-	merge.MkvWithAss(folderPath, extension)
+	merge.MkvWithAss(constant.GetRoot(), extension)
 }
