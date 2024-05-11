@@ -1,8 +1,8 @@
 package constant
 
 var (
-	root = "/mnt/c/Users/zen/Videos/test/data"
-	//root = "/data"
+	//root = "/mnt/c/Users/zen/Videos/test/data"
+	root = "/data"
 )
 
 func SetRoot(s string) {

@@ -16,7 +16,7 @@ RUN apt update
 COPY install-retry.sh /usr/local/bin/install-retry.sh
 RUN chmod +x /usr/local/bin/install-retry.sh
 
-RUN install-retry.sh ffmpeg locales dos2unix
+RUN install-retry.sh ffmpeg locales dos2unix mediainfo
 
 RUN locale-gen zh_CN.UTF-8
 RUN echo "export LC_ALL=zh_CN.UTF-8">> /etc/profile
