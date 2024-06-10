@@ -3,6 +3,7 @@ package merge
 import (
 	"fmt"
 	"github.com/zhangyiming748/FastMediaInfo"
+	"log"
 	"log/slog"
 	"os"
 	"os/exec"
@@ -14,7 +15,7 @@ import (
 func MkvWithAss(dir, pattern string) {
 	files, err := getFilesWithExtension(dir, pattern)
 	if err != nil {
-		fmt.Println("Error:", err)
+		log.Println("Error:", err)
 		return
 	}
 
@@ -28,7 +29,7 @@ func MkvWithAss(dir, pattern string) {
 			p := FastMediaInfo.GetStandMediaInfo(file)
 			width, _ := strconv.Atoi(p.Video.Width)
 			height, _ := strconv.Atoi(p.Video.Height)
-			slog.Info("获取到的分辨率", slog.String("文件路径", file), slog.Int("width", width), slog.Int("height", height))
+			log.Printf("获取到的分辨率", slog.String("文件路径", file), slog.Int("width", width), slog.Int("height", height))
 			crf := FastMediaInfo.GetCRF("vp9", width, height)
 			if crf == "" {
 				crf = "31"
