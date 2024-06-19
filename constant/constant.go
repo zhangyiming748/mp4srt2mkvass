@@ -2,7 +2,7 @@ package constant
 
 var (
 	//root = "/mnt/c/Users/zen/Videos/test/data"
-	root = "E:\\pikpak\\亀頭責"
+	root = "/Volumes/Ventoy/翻译完成 等待合并/Hitomi"
 )
 
 func SetRoot(s string) {
